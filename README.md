@@ -1,4 +1,4 @@
-#Аргегатор Java вакансий
+# Аргегатор Java вакансий
 [![Build Status](https://travis-ci.org/ReyBos/job4j_grabber.svg?branch=master)](https://travis-ci.org/ReyBos/job4j_grabber) &nbsp;&nbsp;
 [![codecov](https://codecov.io/gh/ReyBos/job4j_grabber/branch/master/graph/badge.svg?token=81A5NR6R7U)](https://codecov.io/gh/ReyBos/job4j_grabber)
 
@@ -22,8 +22,8 @@
 <p><a href="https://www.postgresql.org/download/">PostgreSQL</a> - база данных</p>
 
 <h2>Компиляция</h2>
-Для работы приложения нужно создать базу данных и добавить настройки для подключения в файл pom.xml 
-в раздел profiles
+<p>Для работы приложения нужно создать базу данных и добавить настройки для подключения в файл pom.xml 
+в раздел profiles</p>
 <pre>
 <code>$ cd job4j_grabber
 $ mvn package -Pproduction</code>
