@@ -19,6 +19,7 @@ public class AlertRabbitParams {
         )) {
             properties.load(rabbitProp);
         }
+        int interval = Integer.parseInt(properties.getProperty("rabbit.interval"));
         Class.forName(properties.getProperty("jdbc.driver"));
         try (Connection connection = DriverManager.getConnection(
                 properties.getProperty("jdbc.url"),
@@ -33,7 +34,7 @@ public class AlertRabbitParams {
                     .usingJobData(data)
                     .build();
             SimpleScheduleBuilder times = simpleSchedule()
-                    .withIntervalInSeconds(5)
+                    .withIntervalInSeconds(interval)
                     .repeatForever();
             Trigger trigger = newTrigger()
                     .startNow()
