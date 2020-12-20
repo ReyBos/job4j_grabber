@@ -22,8 +22,8 @@
 <p><a href="https://www.postgresql.org/download/">PostgreSQL</a> - база данных</p>
 
 <h2>Компиляция</h2>
-Для работы приложения нужно создать базу данных и добавить настройки для подключения в файл pom.xml 
-в раздел profiles
+<p>Для работы приложения нужно создать базу данных и добавить настройки для подключения в файл pom.xml 
+в раздел profiles</p>
 <pre>
 <code>$ cd job4j_grabber
 $ mvn package -Pproduction</code>
