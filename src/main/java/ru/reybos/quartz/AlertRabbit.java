@@ -4,6 +4,7 @@ import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Properties;
 
 import static org.quartz.JobBuilder.*;
@@ -11,9 +12,14 @@ import static org.quartz.TriggerBuilder.*;
 import static org.quartz.SimpleScheduleBuilder.*;
 
 public class AlertRabbit {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Properties config = new Properties();
+        try (FileReader rabbitProp = new FileReader(
+                "./src/main/resources/rabbit.properties"
+        )) {
+            config.load(rabbitProp);
+        }
         try {
-            Properties config = new Properties();
             config.load(new FileReader("./src/main/resources/rabbit.properties"));
             int interval = Integer.parseInt(config.getProperty("rabbit.interval"));
             // Конфигурирование.
