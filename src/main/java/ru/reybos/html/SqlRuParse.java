@@ -5,7 +5,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.text.SimpleDateFormat;
+
 public class SqlRuParse {
+    public static SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
+    public static DateParser parser = new DateParser();
+
     public static void main(String[] args) throws Exception {
         Document doc = Jsoup.connect("https://www.sql.ru/forum/job-offers").get();
         Elements row = doc.select(".postslisttopic");
@@ -16,6 +21,7 @@ public class SqlRuParse {
             System.out.println(href.text());
             Element date = dateRow.get(i);
             System.out.println(date.text());
+            System.out.println(dateFormat.format(parser.parseDate(date.text()).getTime()));
         }
     }
 }
