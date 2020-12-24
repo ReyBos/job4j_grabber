@@ -41,7 +41,7 @@ public class DateParser {
         );
     }
 
-    public Calendar getTodayCalendar(String str) {
+    private Calendar getTodayCalendar(String str) {
         Matcher matcher = TIME_PATTERN.matcher(str);
         if (!matcher.find()) {
             throw new IllegalStateException("Невозможно разобрать время");
@@ -53,7 +53,7 @@ public class DateParser {
         return today;
     }
 
-    public Calendar getCalendar(String str) {
+    private Calendar getCalendar(String str) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("d MMM yy, HH:mm", new Locale("ru"));
         dateFormat.setDateFormatSymbols(DATE_FORMAT_SYMBOLS);
         Calendar calendar = new GregorianCalendar(new Locale("ru"));

@@ -14,4 +14,14 @@ public class Post {
         this.date = date;
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Post{"
+                + "link='" + link + '\''
+                + ", title='" + title + '\''
+                + ", date=" + date
+                + ", description='" + description + '\''
+                + '}';
+    }
 }
