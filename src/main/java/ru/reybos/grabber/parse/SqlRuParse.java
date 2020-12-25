@@ -1,9 +1,10 @@
-package ru.reybos.grabber;
+package ru.reybos.grabber.parse;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import ru.reybos.grabber.store.Post;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,13 +45,5 @@ public class SqlRuParse implements Parse {
                 dateParser.parseDate(footerMatcher.group()),
                 msgBody.text()
         );
-    }
-
-    public static void main(String[] args) throws IOException {
-        SqlRuParse sqlRuParse = new SqlRuParse();
-        String link = "https://www.sql.ru/forum/1332051/starshiy-specialist-po-testirovaniu-bank";
-        System.out.println(sqlRuParse.detail(link));
-        List<Post> posts = sqlRuParse.list("https://www.sql.ru/forum/job-offers");
-        System.out.println(posts.get(3));
     }
 }

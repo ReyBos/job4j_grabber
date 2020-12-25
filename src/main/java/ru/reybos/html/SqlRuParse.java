@@ -4,8 +4,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import ru.reybos.grabber.DateParser;
-import ru.reybos.grabber.Post;
+import ru.reybos.grabber.parse.DateParser;
+import ru.reybos.grabber.store.Post;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,6 @@
-package ru.reybos.grabber;
+package ru.reybos.grabber.parse;
+
+import ru.reybos.grabber.store.Post;
 
 import java.io.IOException;
 import java.util.List;

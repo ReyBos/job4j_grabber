@@ -1,4 +1,4 @@
-package ru.reybos.grabber;
+package ru.reybos.grabber.parse;
 
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
