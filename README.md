@@ -20,6 +20,8 @@
 <p><a href="https://www.oracle.com/java/technologies/javase-jdk15-downloads.html">Open JDK 14</a> - компилятор\интерпритатор</p>
 <p><a href="http://maven.apache.org/index.html">Maven</a> - сборка и управление проектом</p>
 <p><a href="https://www.postgresql.org/download/">PostgreSQL</a> - база данных</p>
+<p>JSOUP для парсинга</p>
+<p>JDBC для работы с базой данных</p>
 
 <h2>Компиляция</h2>
 <p>Для работы приложения нужно создать базу данных и добавить настройки для подключения в файл pom.xml 
@@ -34,3 +36,4 @@ $ mvn package -Pproduction</code>
 <pre>
 <code>$ java -jar grabber.jar</code>
 </pre>
+<p>После запуска программы результат можно посмотреть по адресу http://localhost:9000/</p>
