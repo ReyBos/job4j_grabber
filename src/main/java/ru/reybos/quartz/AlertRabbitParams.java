@@ -3,7 +3,7 @@ package ru.reybos.quartz;
 import org.quartz.*;
 import org.quartz.impl.StdSchedulerFactory;
 
-import java.io.FileReader;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
@@ -14,9 +14,9 @@ import static org.quartz.SimpleScheduleBuilder.*;
 public class AlertRabbitParams {
     public static void main(String[] args) throws Exception {
         Properties properties = new Properties();
-        try (FileReader rabbitProp = new FileReader(
-                "./src/main/resources/rabbit.properties"
-        )) {
+        try (InputStream rabbitProp =
+                     AlertRabbitParams.class.getClassLoader().getResourceAsStream("rabbit.properties")
+        ) {
             properties.load(rabbitProp);
         }
         int interval = Integer.parseInt(properties.getProperty("rabbit.interval"));
